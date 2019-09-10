@@ -1,27 +1,31 @@
-package com.flipkart.qa.testcases;
+package com.qa.testcases;
 
 import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.flipkart.qa.base.TestBase;
-import com.flipkart.qa.pages.FlipKartMainPage;
+import com.qa.base.TestBase;
+import com.qa.pages.FlipKartMainPage;
 
 public class FlipKartMainPageTest extends TestBase {
 	FlipKartMainPage flipkartmainpage;
+	
+	String flipkart="https://www.flipkart.com/";
+	
 	@BeforeTest
 	public void setUp() throws FileNotFoundException{
 		initialization();
-		flipkartmainpage= new FlipKartMainPage();	
+		flipkartmainpage= new FlipKartMainPage();
+		launchAut(flipkart);
+		
 	}
 	
 	@Test(priority=1)
@@ -48,19 +52,27 @@ public class FlipKartMainPageTest extends TestBase {
 		String handle2= itr.next();
 		
 		driver.switchTo().window(handle2);
+		
 		Assert.assertTrue(FlipKartMainPage.addToCartButton.isEnabled());
 	}
 	 
 	@Test(priority=3)
 	public void addToCartItemTest() throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(FlipKartMainPage.addToCartButton));
-		 element.click(); 
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		//wait.until(ExpectedConditions.elementToBeClickable(FlipKartMainPage.addToCartButton));
+		Thread.sleep(3000);
+		FlipKartMainPage.addToCartButton.click();
+		Thread.sleep(3000);
 		FlipKartMainPage.addIcon.click();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		System.out.println("The Price of the Product is "+FlipKartMainPage.priceOfProd);
+		Thread.sleep(3000);
+		System.out.println("The Price of the Product is "+FlipKartMainPage.priceOfProd.getText());
+	}
+	@AfterTest
+	public void closeSetUp()
+	{
+		driver.quit();
 	}
 	
 

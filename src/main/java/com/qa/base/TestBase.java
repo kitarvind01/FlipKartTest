@@ -1,4 +1,4 @@
-package com.flipkart.qa.base;
+package com.qa.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,15 +9,15 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import com.flipkart.qa.util.*;
+
+import com.qa.util.*;
 
 public class TestBase {
 
 
 	public static WebDriver driver;
-	public static Properties prop=new Properties();;
-
-
+	public static Properties prop=new Properties();
+	
 	public TestBase(){
 		try {
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/test/resource/configs/config.properties");
@@ -49,8 +49,9 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		driver.get(prop.getProperty("url"));
-
-
+	}
+	
+	public static void launchAut(String url) {
+		driver.get(url);
 	}
 }

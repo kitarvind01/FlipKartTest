@@ -1,10 +1,10 @@
-package com.flipkart.qa.pages;
+package com.qa.pages;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.flipkart.qa.base.TestBase;
+import com.qa.base.TestBase;
 
 public class FlipKartMainPage extends TestBase{
 	@FindBy(xpath="//span[text()='Electronics']")
@@ -19,7 +19,7 @@ public class FlipKartMainPage extends TestBase{
 	@FindBy(xpath="//div[contains(text(),'Google Pixel 3a')]")
 	public static WebElement clickOnFirstItem;
 	
-	@FindBy(xpath="//ul[@class='row']//button")
+	@FindBy(xpath="//ul[@class='row']//li/button")
 	public static WebElement addToCartButton;
 	
 	
