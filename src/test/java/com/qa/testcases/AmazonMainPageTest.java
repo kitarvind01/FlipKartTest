@@ -16,6 +16,8 @@ public class AmazonMainPageTest extends TestBase{
 	AmazonMainPage amazonMainPage;
 	String amazonUrl="https://www.amazon.in/";
 	String flipkartUrl="https://www.flipkart.com/";
+	double amazonPriceIphone=0.0;
+	double flipkartPriceIphone=0.0;
 	@BeforeTest
 	public void setUp() throws FileNotFoundException {
 		initialization();
@@ -53,8 +55,12 @@ public class AmazonMainPageTest extends TestBase{
 	@Test(priority=4)
 	public void getPrice()
 	{
-		String price=AmazonMainPage.getPriceOfProd.getText();
-		System.out.println(price);
+	    String amazonPrice=AmazonMainPage.getPriceOfProd.getText();
+		String amazonPriceOrg= amazonPrice.substring(2, amazonPrice.length()-1);
+		int getIndex= amazonPriceOrg.indexOf(',');
+		String amazonPriceOrg1=amazonPriceOrg.substring(0, getIndex) + amazonPriceOrg.substring(getIndex + 1);
+		amazonPriceIphone=Double.parseDouble(amazonPriceOrg1);
+		System.out.println("This is original price "+amazonPriceIphone);
 		//driver.quit();
 	}
 	
@@ -71,7 +77,13 @@ public class AmazonMainPageTest extends TestBase{
 		Thread.sleep(3000);
 		AmazonMainPage.selectIphone.click();
 		Thread.sleep(3000);
-		System.out.println(AmazonMainPage.getPriceOfProdFlipkart.getText());
+		String flipkartPrice=AmazonMainPage.getPriceOfProdFlipkart.getText();
+		String flipkartPriceOrg= flipkartPrice.substring(1, flipkartPrice.length());
+		int getIndex= flipkartPriceOrg.indexOf(',');
+		String flipkartPriceOrg1=flipkartPriceOrg.substring(0, getIndex) + flipkartPriceOrg.substring(getIndex + 1);
+		flipkartPriceIphone=Integer.parseInt(flipkartPriceOrg1);
+		System.out.println(flipkartPriceIphone);
+		Assert.assertEquals(amazonPriceIphone, flipkartPriceIphone);
 	
 	}
 }
