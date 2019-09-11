@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -25,12 +26,15 @@ public class AmazonMainPageTest extends TestBase{
 		amazonMainPage= new AmazonMainPage();
 		
 	}
+	//getting the title of the page
 	@Test(priority=1)
 	public void verifyAmazonTitlePageTest()
 	{
 		Assert.assertEquals(driver.getTitle(), "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
 	}
-
+   
+	
+	//Search the given Item in the search bar
 	@Test(priority=2)
 	public void searchItemTest()
 	{
@@ -38,7 +42,7 @@ public class AmazonMainPageTest extends TestBase{
 		AmazonMainPage.amazonGoButton.click();
 		
 	}
-	
+	//Select The particular item from the item list
 	@Test(priority=3)
 	public void selectAppleIphone() {
 		AmazonMainPage.clickAppleIphone.click();
@@ -52,6 +56,7 @@ public class AmazonMainPageTest extends TestBase{
 		driver.switchTo().window(handle2);
 	}
 	
+	//Getting price of the selected item
 	@Test(priority=4)
 	public void getPrice()
 	{
@@ -64,6 +69,7 @@ public class AmazonMainPageTest extends TestBase{
 		//driver.quit();
 	}
 	
+	//Nevigating to the flipkart and doing the same as done above and getting the price of the item and compare with amazon product price
 	@Test(priority=5)
 	public void nevigateToFlipkartFormAzazon() throws InterruptedException
 	{
@@ -86,4 +92,10 @@ public class AmazonMainPageTest extends TestBase{
 		Assert.assertEquals(amazonPriceIphone, flipkartPriceIphone);
 	
 	}
+	@AfterTest
+	public void closeSetUp()
+	{
+		driver.quit();
+	}
+	
 }

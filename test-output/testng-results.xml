@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42241" started-at="2019-09-11T05:52:33Z" finished-at="2019-09-11T05:53:15Z">
+  <suite name="Default suite" duration-ms="42036" started-at="2019-09-11T06:11:18Z" finished-at="2019-09-11T06:12:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42241" started-at="2019-09-11T05:52:33Z" finished-at="2019-09-11T05:53:15Z">
+    <test name="Default test" duration-ms="42036" started-at="2019-09-11T06:11:18Z" finished-at="2019-09-11T06:12:00Z">
       <class name="com.qa.testcases.AmazonMainPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="setUp" is-config="true" duration-ms="9361" started-at="2019-09-11T11:22:33Z" finished-at="2019-09-11T11:22:42Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="setUp" is-config="true" duration-ms="11372" started-at="2019-09-11T11:41:18Z" finished-at="2019-09-11T11:41:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyAmazonTitlePageTest()[pri:1, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="verifyAmazonTitlePageTest" duration-ms="1357" started-at="2019-09-11T11:22:42Z" finished-at="2019-09-11T11:22:43Z">
+        <test-method status="PASS" signature="verifyAmazonTitlePageTest()[pri:1, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="verifyAmazonTitlePageTest" duration-ms="229" started-at="2019-09-11T11:41:29Z" finished-at="2019-09-11T11:41:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAmazonTitlePageTest -->
-        <test-method status="PASS" signature="searchItemTest()[pri:2, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="searchItemTest" duration-ms="6038" started-at="2019-09-11T11:22:43Z" finished-at="2019-09-11T11:22:49Z">
+        <test-method status="PASS" signature="searchItemTest()[pri:2, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="searchItemTest" duration-ms="5817" started-at="2019-09-11T11:41:29Z" finished-at="2019-09-11T11:41:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchItemTest -->
-        <test-method status="PASS" signature="selectAppleIphone()[pri:3, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="selectAppleIphone" duration-ms="888" started-at="2019-09-11T11:22:49Z" finished-at="2019-09-11T11:22:50Z">
+        <test-method status="PASS" signature="selectAppleIphone()[pri:3, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="selectAppleIphone" duration-ms="426" started-at="2019-09-11T11:41:35Z" finished-at="2019-09-11T11:41:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectAppleIphone -->
-        <test-method status="PASS" signature="getPrice()[pri:4, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="getPrice" duration-ms="1465" started-at="2019-09-11T11:22:50Z" finished-at="2019-09-11T11:22:52Z">
+        <test-method status="PASS" signature="getPrice()[pri:4, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="getPrice" duration-ms="1463" started-at="2019-09-11T11:41:36Z" finished-at="2019-09-11T11:41:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPrice -->
-        <test-method status="FAIL" signature="nevigateToFlipkartFormAzazon()[pri:5, instance:com.qa.testcases.AmazonMainPageTest@204f30ec]" name="nevigateToFlipkartFormAzazon" duration-ms="23092" started-at="2019-09-11T11:22:52Z" finished-at="2019-09-11T11:23:15Z">
+        <test-method status="FAIL" signature="nevigateToFlipkartFormAzazon()[pri:5, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="nevigateToFlipkartFormAzazon" duration-ms="21364" started-at="2019-09-11T11:41:37Z" finished-at="2019-09-11T11:41:58Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [36999.0] but found [35999.0]]]>
@@ -39,7 +39,7 @@
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:179)
-	at com.qa.testcases.AmazonMainPageTest.nevigateToFlipkartFormAzazon(AmazonMainPageTest.java:93)
+	at com.qa.testcases.AmazonMainPageTest.nevigateToFlipkartFormAzazon(AmazonMainPageTest.java:92)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -71,6 +71,10 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nevigateToFlipkartFormAzazon -->
+        <test-method status="PASS" signature="closeSetUp()[pri:0, instance:com.qa.testcases.AmazonMainPageTest@e25b2fe]" name="closeSetUp" is-config="true" duration-ms="1311" started-at="2019-09-11T11:41:58Z" finished-at="2019-09-11T11:42:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSetUp -->
       </class> <!-- com.qa.testcases.AmazonMainPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

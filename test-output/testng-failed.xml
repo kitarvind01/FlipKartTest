@@ -5,6 +5,7 @@
     <classes>
       <class name="com.qa.testcases.AmazonMainPageTest">
         <methods>
+          <include name="closeSetUp"/>
           <include name="setUp"/>
           <include name="nevigateToFlipkartFormAzazon"/>
         </methods>

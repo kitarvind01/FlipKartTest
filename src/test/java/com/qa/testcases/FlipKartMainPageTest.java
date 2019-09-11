@@ -28,12 +28,16 @@ public class FlipKartMainPageTest extends TestBase {
 		
 	}
 	
+	//Getting and validating the title of the page
+	
 	@Test(priority=1)
 	public void validateTitlePageTest()
 	{
 		String title= driver.getTitle();
 		Assert.assertEquals(title, "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!");
 	}
+	
+	//Selecting the item from list of the items
 	@Test(priority=2)
 	public void selectItemTest() throws InterruptedException
 	{
@@ -55,7 +59,7 @@ public class FlipKartMainPageTest extends TestBase {
 		
 		Assert.assertTrue(FlipKartMainPage.addToCartButton.isEnabled());
 	}
-	 
+	 //Adding the item into the cart and calculating the price of the product
 	@Test(priority=3)
 	public void addToCartItemTest() throws InterruptedException
 	{
